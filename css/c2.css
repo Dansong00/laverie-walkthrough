@@ -1,0 +1,19 @@
+/* C2 — Same brand chrome, stronger status colors for store-floor scanning.
+   Orange stays the "in process / brand" status. Other phases get distinct hues
+   with solid fills and high contrast type. */
+:root {
+  --status-planned: 0 0% 91%;
+  --status-planned-foreground: 0 0% 20%;
+  --status-sent: 38 92% 48%;             /* gold, close to review stars */
+  --status-sent-foreground: 0 0% 12%;
+  --status-received: 174 55% 28%;        /* teal */
+  --status-received-foreground: 0 0% 100%;
+  --status-processing: 21.37 87.95% 48.82%; /* brand orange */
+  --status-processing-foreground: 0 0% 100%;
+  --status-ready: 142 52% 28%;           /* green — packed / ready */
+  --status-ready-foreground: 0 0% 100%;
+  --status-return-sent: 215 48% 32%;     /* slate blue — on the way back */
+  --status-return-sent-foreground: 0 0% 100%;
+  --status-returned: 0 0% 12.16%;
+  --status-returned-foreground: 0 0% 100%;
+}

@@ -1,0 +1,123 @@
+/* Laverie Transfer — brand tokens in shadcn/ui theming shape.
+   HSL channels (space-separated) so utilities can do hsl(var(--primary)).
+   Port to Next.js by pasting this into app/globals.css and wiring shadcn components.
+   Primitives can be Base UI (https://base-ui.com/react/handbook/styling) or Radix,
+   following https://ui.shadcn.com/docs. */
+
+@font-face {
+  font-family: "Anton";
+  src: url("../fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  src: url("../fonts/Epilogue-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Epilogue";
+  src: url("../fonts/Epilogue-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  /* Brand color primitives */
+  --white-hsl: 60 9.09% 97.84%;          /* #FAFAF9 */
+  --black-hsl: 0 0% 12.16%;              /* #1F1F1F */
+  --accent-hsl: 21.37 87.95% 48.82%;     /* #EA5D0F */
+  --light-accent-hsl: 0 0% 90.98%;       /* #E8E8E8 */
+  --dark-accent-hsl: 0 0% 40%;           /* #666666 */
+  --logo-orange: #ED6032;                /* wordmark pixel color; theme accent is #EA5D0F */
+
+  /* shadcn/ui semantic tokens */
+  --background: var(--white-hsl);
+  --foreground: var(--black-hsl);
+  --card: 0 0% 100%;
+  --card-foreground: var(--black-hsl);
+  --popover: 0 0% 100%;
+  --popover-foreground: var(--black-hsl);
+  --primary: var(--accent-hsl);
+  --primary-foreground: 0 0% 100%;
+  --secondary: var(--light-accent-hsl);
+  --secondary-foreground: var(--black-hsl);
+  --muted: 60 9% 94%;                    /* slightly deeper warm wash */
+  --muted-foreground: var(--dark-accent-hsl);
+  --accent: 21.37 87.95% 95%;            /* pale orange wash */
+  --accent-foreground: var(--accent-hsl);
+  --destructive: 8 72% 42%;
+  --destructive-foreground: 0 0% 100%;
+  --border: var(--light-accent-hsl);
+  --input: var(--light-accent-hsl);
+  --ring: var(--accent-hsl);
+
+  /* Theme file on the site sets 6.4px "rounded" buttons;
+     visible CTAs (Call now, Learn more, Sign up) are pills. */
+  --radius: 0.4rem;                     /* 6.4px */
+  --radius-lg: 0.75rem;
+  --radius-pill: 999px;
+
+  --font-sans: "Montserrat", "Helvetica Neue", system-ui, sans-serif;
+  --font-heading: "Anton", "Impact", sans-serif;
+  --font-cta: "Epilogue", "Montserrat", sans-serif;
+  --font-mono: "Montserrat", ui-monospace, monospace;
+
+  --heading-letter-spacing: 0.02em;
+  --header-height: 64px;
+
+  /* Status tokens — overridden by c1.css / c2.css */
+  --status-planned: var(--light-accent-hsl);
+  --status-planned-foreground: var(--black-hsl);
+  --status-sent: 21 50% 90%;
+  --status-sent-foreground: var(--black-hsl);
+  --status-received: 21 55% 82%;
+  --status-received-foreground: var(--black-hsl);
+  --status-processing: var(--accent-hsl);
+  --status-processing-foreground: 0 0% 100%;
+  --status-ready: 21 80% 36%;
+  --status-ready-foreground: 0 0% 100%;
+  --status-return-sent: var(--dark-accent-hsl);
+  --status-return-sent-foreground: 0 0% 100%;
+  --status-returned: var(--black-hsl);
+  --status-returned-foreground: 0 0% 100%;
+  --status-hold: var(--muted);
+  --status-hold-foreground: var(--dark-accent-hsl);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { height: 100%; }
+body {
+  min-height: 100%;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: hsl(var(--primary)); text-decoration: none; }
+[hidden] { display: none !important; }

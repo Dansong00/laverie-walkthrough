@@ -1,0 +1,29 @@
+/* Walkthrough-only extras. C2 + e2e styles stay intact. */
+.sample-banner { letter-spacing: 0.02em; }
+.sample-banner a { color: inherit; font-weight: 650; margin-left: 0.6em; }
+
+.tap-ripple {
+  position: fixed;
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-radius: 50%;
+  background: hsl(var(--primary) / 0.35);
+  border: 2px solid hsl(var(--primary) / 0.5);
+  pointer-events: none;
+  z-index: 80;
+  animation: tap-ripple 0.45s ease-out forwards;
+}
+@keyframes tap-ripple {
+  from { transform: scale(0.55); opacity: 0.9; }
+  to { transform: scale(1.35); opacity: 0; }
+}
+
+.demo-hint {
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.45;
+}
+.demo-hint strong { color: hsl(var(--foreground)); font-weight: 650; }
+
